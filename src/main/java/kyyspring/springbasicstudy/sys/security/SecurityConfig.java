@@ -34,7 +34,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) // 세션 필요시 생성
                 )
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/api/auth/**", "/api/guest/**").permitAll()
+                        .requestMatchers("/api/auth/**", "/api/guest/**", "/api/sse/*").permitAll()
                         .requestMatchers("/api/member/**").hasRole("MEMBER")
                         .anyRequest().authenticated()
                 )
