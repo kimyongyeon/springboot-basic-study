@@ -37,4 +37,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query("DELETE FROM User u WHERE u.userType = 'GUEST' AND u.updatedAt < :expireTime")
     void deleteExpiredGuestUsers(@Param("expireTime") LocalDateTime expireTime);
+
+    Optional<User> findByUserId(String id);
 }
