@@ -21,8 +21,8 @@ public class AuthService {
         }
 
         // 2. 유저 조회
-        User user = userRepository.findByUserId(userId)
-                .orElse(null);
+        User user = null; //userRepository.findByUserId(userId)
+//                .orElse(null);
 
         if (user == null) {
             int failCount = loginFailService.increaseFailCount(userId);

@@ -1,13 +1,25 @@
 package kyyspring.springbasicstudy;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import kyyspring.springbasicstudy.rsaservice.RsaUtil;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBasicStudyApplication {
+@RequiredArgsConstructor
+@Slf4j
+public class SpringBasicStudyApplication implements ApplicationRunner {
+
+    private final RsaUtil rsaUtil;
+    private final ObjectMapper objectMapper;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBasicStudyApplication.class, args);
+
 
 //        WebClient webClient = WebClient.create();
 //        Mono<String> stringMono = webClient.get()
@@ -49,4 +61,11 @@ public class SpringBasicStudyApplication {
 
     }
 
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+//        log.error("<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
+//        Map<String, String> keyPair = RsaUtil.createKeyPair();
+//        RsaKeyDto publicKey = objectMapper.convertValue(keyPair, RsaKeyDto.class);
+//        log.error(">>>>>>>>>>>>>>>>>> " + publicKey.toString());
+    }
 }
